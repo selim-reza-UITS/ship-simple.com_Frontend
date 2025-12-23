@@ -3,7 +3,8 @@ import axios from "axios";
 
 // Create Axios instance
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:9600/api/", // Your API base URL
+  // baseURL: "http://127.0.0.1:9600/api/", // Your API base URL
+  baseURL: "https://api.ship-simple.com/api/", // Your API base URL
   headers: {
     "Content-Type": "application/json",
   },
@@ -41,7 +42,7 @@ instance.interceptors.response.use(
 
       try {
         // Request a new access token using the refresh token
-        const response = await axios.post("/api/token/refresh/", { refresh: refreshToken });
+        const response = await axios.post("token/refresh/", { refresh: refreshToken });
 
         // Store the new access token
         localStorage.setItem("access_token", response.data.access);

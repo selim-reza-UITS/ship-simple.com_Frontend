@@ -13,4 +13,13 @@ export default defineConfig({
       "@styles": "/src/styles", //Global and component-level styles (e.g., SCSS)
     },
   },
+  server: {
+    host: true,
+    port: 5014,
+    watch: {
+      usePolling: true
+    },
+    allowedHosts: ['www.ship-simple.com',"ship-simple.com"],
+  },
+
 });
